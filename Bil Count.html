@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Electricity Bill Count</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+	<style type="text/css">
+	.container{
+		width: 100%;
+		height: 100%;
+		background-color: #fff52456;
+		padding: 80px 0px 80px 0px;
+	}	
+	h1{
+		align-items: center;
+		font-size: 30px;
+		padding: 0px 0px 5px 22%;
+
+	}
+	label{
+		padding:0px 0px 0px 20px;
+	}
+	button{
+		border-radius: 15px;
+		padding: 2px 45px 2px 45px;
+	}
+	input{
+		border: 2px solid #088b9185;
+		border-radius: 10px;
+	}
+	input:hover{
+		border:2px solid green;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1><u>This is a ElecTricity Bill Genretor</u></h1>
+	<div class="row">
+
+
+	<div class="col-6">
+	<label>
+		Enter Your Electricity metera No:	
+	</div>
+	<div class="col-6">
+	<input type="text" name="mitear no." id="mtrno" class="mtrno" placeholder="Enter Your Electricity metera No.">
+	</label>
+    </div>
+	</div>
+    <br>
+
+
+    <div class="row">
+	<div class="col-6">
+	<label>
+		old month reading:
+	</div>	
+	<div class="col-6">
+		<input type="text" name="old month reading" id="olmtr" class="olmtr" placeholder="Enter Your old metear reading">
+	</label>
+    </div>
+    </div>
+    <br>
+
+<div class="row">
+	<div class="col-6">
+	<label>
+		Enter Current MEater Reading:
+	</div>	
+	<div class="col-6">
+		<input type="text" name="Current month reading" id="ctmtr" class="ctmtr" placeholder="Enter Your current metear reading">
+	</label>
+    </div>
+    </div>
+    <br>
+
+	
+	<center>
+	<button onclick="result()"  class="btn btn-outline-success "> Submit all Informaction</button>
+	</center>
+	<br>
+
+	<div class="row">
+	<div class="col-6">
+	<label><i class="fas fa-car"></i>
+		Total Unit OF this Merter No.
+	</div>
+	<div class="col-6">
+		<input class="Number" id="result" readonly="" class="result" placeholder="Pleas fill Out all Feald">
+	</label>
+	</div>	
+	</div>
+
+
+
+
+	<br>
+	<div class="row">
+	<div class="col-6">
+	<label>
+		Your Electricty Bill is Generating &#8377; 
+	</div>
+	<div class="col-6">
+		<input type="textbox" id="rupay"  class="final" placeholder="&#8377;"  >
+		5 &#8377; Per unit
+	</label>
+	</div>
+	</div>
+	<br>
+</div>
+</body>
+<script type="text/javascript">
+
+	function result(){
+		var mtrno=document.getElementById('mtrno').value;
+		var olmtr=document.getElementById('olmtr').value;
+		var ctmtr=document.getElementById('ctmtr').value;
+
+		var monus=parseInt(ctmtr)-parseInt(olmtr);
+		document.getElementById('result').value=monus;
+
+		var into=parseInt(monus)*5;
+		document.getElementById('rupay').value= "You have to Pay "+into;
+
+
+	}
+</script>
+</html>
